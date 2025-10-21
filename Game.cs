@@ -12,6 +12,9 @@ namespace Labb2_ConsolePong
         int width;
         int height;
 
+        Paddle player1;
+        Paddle player2;
+
         public void StartGame()
         {
             // Setup konsol-fönstret
@@ -19,8 +22,8 @@ namespace Labb2_ConsolePong
             height = Console.WindowHeight;
             Console.CursorVisible = false;
 
-            Paddle player1 = new Paddle(3, 10, 7);
-            Paddle player2 = new Paddle(3, 10, 7);
+            player1 = new Paddle(3, height / 2, 7);
+            player2 = new Paddle(width - 4, height /2, 7);
         }
 
         public bool Run()
@@ -31,21 +34,27 @@ namespace Labb2_ConsolePong
             if (Input.IsPressed(ConsoleKey.UpArrow))
             {
                 //Flytta spelare 1 uppåt
+                player1.Move(-1);
             }
             if (Input.IsPressed(ConsoleKey.DownArrow))
             {
                 //Flytta spelare 1 nedåt
+                player1.Move(1);
             }
 
             if (Input.IsPressed(ConsoleKey.W))
             {
                 //Flytta spelare 2 uppåt
+                player2.Move(-1);
             }
             if (Input.IsPressed(ConsoleKey.S))
             {
                 //Flytta spelare 2 nedåt
+                player2.Move(1);
             }
 
+            player1.Draw();
+            player2.Draw();
 
 
             //Return true om spelet ska fortsätta
