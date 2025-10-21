@@ -21,7 +21,13 @@ namespace Labb2_ConsolePong
 
         public void Move(int yAmount)
         {
+            
+        }
 
+        public void Draw()
+        {
+            Console.SetCursorPosition(3, 10);
+            Console.Write("|");
         }
 
     }

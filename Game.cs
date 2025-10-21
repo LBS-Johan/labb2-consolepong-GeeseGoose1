@@ -19,7 +19,8 @@ namespace Labb2_ConsolePong
             height = Console.WindowHeight;
             Console.CursorVisible = false;
 
-
+            Paddle player1 = new Paddle(3, 10, 7);
+            Paddle player2 = new Paddle(3, 10, 7);
         }
 
         public bool Run()
