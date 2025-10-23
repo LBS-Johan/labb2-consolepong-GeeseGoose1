@@ -34,23 +34,23 @@ namespace Labb2_ConsolePong
             if (Input.IsPressed(ConsoleKey.UpArrow))
             {
                 //Flytta spelare 1 uppåt
-                player1.Move(-1);
+                player2.Move(-1);
             }
             if (Input.IsPressed(ConsoleKey.DownArrow))
             {
                 //Flytta spelare 1 nedåt
-                player1.Move(1);
+                player2.Move(1);
             }
 
             if (Input.IsPressed(ConsoleKey.W))
             {
                 //Flytta spelare 2 uppåt
-                player2.Move(-1);
+                player1.Move(-1);
             }
             if (Input.IsPressed(ConsoleKey.S))
             {
                 //Flytta spelare 2 nedåt
-                player2.Move(1);
+                player1.Move(1);
             }
 
             player1.Draw();
