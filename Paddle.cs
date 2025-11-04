@@ -33,7 +33,7 @@ namespace Labb2_ConsolePong
 
         public void Draw()
         {
-            //sålänge i är mindre än size printa "|" på x, y och sedan +i
+            //sålänge i är mindre än size printa "|" på position x, y + i
             for(int i = 0; i<size; i++ )
             {
                 Console.SetCursorPosition(x, y + i);
