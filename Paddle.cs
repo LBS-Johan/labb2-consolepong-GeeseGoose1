@@ -11,12 +11,14 @@ namespace Labb2_ConsolePong
         public int x;
         public int y;
         public int size;
+        public int points;
 
         public Paddle(int x, int y, int size)
         {
             this.x = x;
             this.y = y;
             this.size = size;
+            points = 0;
         }
 
         public void Move(int yAmount)

@@ -62,6 +62,13 @@ namespace Labb2_ConsolePong
             player1.Draw();
             player2.Draw();
 
+            //Skriver ut poängen
+            Console.SetCursorPosition(width / 2 - 4, 0);
+            Console.Write($"{player1.points} - {player2.points}");
+
+            //När spelare får 5 poäng avslutas spelet
+            if (player1.points >= 5 || player2.points >= 5) return false;
+
             //Return true om spelet ska fortsätta
             return true;
 

@@ -27,6 +27,7 @@ namespace Labb2_ConsolePong
 
         public void Draw()
         {
+            //Bara om x och y passar skärm kriterierna kan spelet starta, bollen printa
             if (x >= 0 && x < Console.WindowWidth && y >= 0 && y < Console.WindowHeight)
             {
                 Console.SetCursorPosition(x, y);
@@ -45,16 +46,19 @@ namespace Labb2_ConsolePong
             //Om bollen nuddar spelare 2, byt riktning
             if (x == p2.x - 1 && y >= p2.y && y <= p2.y + p2.size) xVelocity = -xVelocity;
 
-            //Om bollen missar spelare två, resetta
+            //Om spelare 1 missar, resetta boll och ge poäng till spelare 2
             if(x <= 0)
             {
+                p2.points++;
                 x = width / 2;
                 y = height / 2;
                 xVelocity = -xVelocity;
             }
 
-            if(x >= width - 1)
+            //om spelare 2 missar, resetta boll och ge poäng till spelare 1
+            else if(x >= width - 1)
             {
+                p1.points++;
                 x = width / 2;
                 y = height / 2;
                 xVelocity = -xVelocity;
