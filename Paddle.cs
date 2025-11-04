@@ -21,6 +21,7 @@ namespace Labb2_ConsolePong
 
         public void Move(int yAmount)
         {
+            // y ökar med yAmount, checka om y är midnre ön noll setts den till noll, annars om y + size e större än fönstret sätt y till fönsterstorlek minus size
             y += yAmount;
 
             if (y < 0) y = 0;
