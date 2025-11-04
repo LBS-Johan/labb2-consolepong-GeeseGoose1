@@ -14,6 +14,7 @@ namespace Labb2_ConsolePong
 
         Paddle player1;
         Paddle player2;
+        Ball ball;
 
         public void StartGame()
         {
@@ -24,12 +25,17 @@ namespace Labb2_ConsolePong
 
             player1 = new Paddle(3, height / 2, 7);
             player2 = new Paddle(width - 4, height /2, 7);
+            ball = new Ball(width / 2, height / 2, 1, 1);
         }
 
         public bool Run()
         {
             //Töm hela skärmen i början av varje uppdatering.
             Console.Clear();
+
+            ball.Move();
+            ball.CheckCollisions(player1, player2, height, width);
+            ball.Draw();
 
             if (Input.IsPressed(ConsoleKey.UpArrow))
             {
@@ -55,7 +61,6 @@ namespace Labb2_ConsolePong
 
             player1.Draw();
             player2.Draw();
-
 
             //Return true om spelet ska fortsätta
             return true;

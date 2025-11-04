@@ -8,9 +8,9 @@ namespace Labb2_ConsolePong
 {
     internal class Paddle
     {
-        int x;
-        int y;
-        int size;
+        public int x;
+        public int y;
+        public int size;
 
         public Paddle(int x, int y, int size)
         {
@@ -31,6 +31,7 @@ namespace Labb2_ConsolePong
 
         public void Draw()
         {
+            //sålänge i är mindre än size printa "|" på x, y och sedan +i
             for(int i = 0; i<size; i++ )
             {
                 Console.SetCursorPosition(x, y + i);
